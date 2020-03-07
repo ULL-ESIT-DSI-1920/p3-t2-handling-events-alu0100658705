@@ -78,7 +78,32 @@ Actualmente hay dos formas de seleccionar cosas en una pantalla: los ratones y l
 
 **Mouse clicks**
 
-Presionar un botón del ratón cause numerosos tipos de eventos:
+Presionar un botón del ratón causa numerosos tipos de eventos:
 1. En primer lugar tenemos los eventos *mouseup* y *mousedown* que tienen un funcionamiento similar a los eventos *keydown* y *keyup* del ratón, que ya han sido mencionados anteriormente.
 2. El evento *click* se activa después del *mouseup*, y lo hace en un nodo que contiene tanto la presión como la liberación del botón.
-3. 
+3. El evento *dblclick* tiene lugar despúes de que dos "clics" se sucedan de forma simultanea.
+
+Si se quiere obtener información precisa sobre el lugar donde ocurrió un evento del mouse, se puede hacer uso de las propiedades *clientX* y *clientY*, que contienen las coordenadas del evento en pixeles.
+
+El siguiente ejemplo implementa un programa que, cada vez que se hace clic en el documento, agrega un punto debajo del puntero.
+
+![imagen15](images/cap15.png)
+
+![imagen16](images/cap16.png)
+
+**Mouse motion**
+
+Cada vez que el puntero del ratón se mueve, un evento *mousemove* se activa. Este evento puede ser usado para rastrear la posición del mouse. 
+
+En el siguiente ejemplo se configura una barra, que si la arrastramos a la derecha o izquierda se hará más larga o estrecha respectivamente, para ello se configuran los controladores de eventos:
+
+![imagen17](images/cap17.png)
+
+![imagen18](images/cap18.png)
+
+El controlador *mousemove* está registrado en toda la ventada, esto quiere decir que, incluso si el puntero sale de la barra, mientras se mantenga presionado el botón, se podrá seguir modficando el tamaño. 
+
+Cuando dejamos de pulsar el botón, la barra dejará de cambiar de tamaño, para ello se usa la propiedad del controlador del ratón *buttons*, que cuando es igual a cero nos indica que no hay botones presionados. Cuando se mantienen presionados los botones, su valor es la suma de los códigos para esos botones: el botón izquierdo tiene el código 1, el botón derecho 2 y el medio 4. 
+
+**Touch events**
+
