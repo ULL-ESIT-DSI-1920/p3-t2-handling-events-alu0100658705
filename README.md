@@ -107,3 +107,72 @@ Cuando dejamos de pulsar el botón, la barra dejará de cambiar de tamaño, para
 
 **Touch events**
 
+Existen eventos específicos de interacción tactil:
+1. *touchstart* se inicia cuando el dedo empieza a tocar la pantalla.
+2. Cuando se mueve miestras se toca la pantalla, se produce un evento *touchmove*.
+3. Cuando se deja de hacer contacto, se produce un *touchend*.
+
+Los objetos que manejan este tipo de eventos tienen una propiedad asociada (*touches*), que contiene un objeto de puntos de tipo matriz que cada uno de los cuales tiene asociadas sus propias propiedades *clientX*. *clientY*, *pageX* y *pageY*.
+
+### Scroll Events
+
+Cada vez que se desplaza un elemento se activa un evento *scroll*. Entre sus principales usos está saber que está el usuario mirando actualemente, para asi, por ejemplo, deshabilitar las animaciones fuera de la pantalla.
+
+En el ejemplo que se ve a continuación, se dibuja una barra de progreso sobre el documento y lo actualiza para llenarlo a medida que se desplaza hacia abajo:
+
+![imagen19](images/cap19.png)
+
+![imagen20](images/cap20.png)
+
+### Focus Event
+
+- Cuando un elemento gana el foco, el navegador dispara un evento *focus* en él.
+- Cuando el elemento pierde el foco, el elemento obtiene un evento *blur*.
+
+A diferencia del resto eventos, estos no se propagan. Se expone un ejemplo que muestraun texto de ayuda para el elemento que tiene el foco:
+
+![imagen21](images/cap21.png)
+
+![imagen22](images/cap22.png)
+
+### Load Event
+
+Cuando una página termina de cargar, el evento *load* se dispara en los objetos del cuerpo del documento. Normalmente esto se utiliza para programar acciones que se inicien cuando se haya cargado el documento.
+
+Los elementos como las imágenes y las etiquetas *script* también tienen un evento *load* que indican que se cargaron los archivos a los que hacen referencia.
+
+Los eventos *load* no se propagan.
+
+Cuando una página se cierra se activa un evento *beforeunload* que puede servir para evitar que un usuario pierda el trabajo realizado al cerrar un documento.
+
+### Events and the event loop
+
+### Timers
+
+A veces será necesario cancelar una función que se ha programado. Esto se hace almacenando el valor devuelto por *setTimeout* y llamando a *clearTimeout* en él. En este ejemplo si el método *Math.random()* devuleve un valor menor a 0.5, se llamará a la función *clearTimeout*:
+
+![imagen23](images/cap23.png)
+
+![imagen24](images/cap24.png)
+
+Un conjunto similar de funciones, *setInterval* y *clearInterval*, se utilizan para establecer temporalizadores que se repiten cada X segundos:
+
+![imagen25](images/cap25.png)
+
+### Debouncing
+
+Existen algunos eventos que tienen el potencial de dispararse rápidamente y muchas veces de forma consecutiva, por lo tanto se puede dar el caso que estos eventos requieran mucho tiempo y el controlador se demore atendiendolos y cause que la interacción con el documento empiece a realentizarse. 
+
+En el siguiente ejemplo, se espera a que ocurra una pausa mientras el usuario escribe para que se active el controlador de eventos:
+
+![imagen26](images/cap26.png)
+
+![imagen27](images/cap27.png)
+
+Si se quiere espaciar las respuestas para que estén separadas por al menos un cierto período de tiempo, por ejemplo, se podría querer responder a eventos *mousemove* mostrando las coordenadas actuales pero solo cada 250 milisegundos:
+
+![imagen28](images/cap28.png)
+
+![imagen29](images/cap29.png)
+
+## Ejercicios
