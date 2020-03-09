@@ -176,3 +176,27 @@ Si se quiere espaciar las respuestas para que estén separadas por al menos un c
 ![imagen29](images/cap29.png)
 
 ## Ejercicios
+
+1. **Censored Keyboard**: program a text field (an input tag) where the letters Q, W, and X cannot be typed.
+
+![imagen30](images/cap30.png)
+
+2. **Mouse trail** : a series of images that would follow the mouse pointer as you move it acrros the page.
+
+![imagen31](images/cap31.png)
+
+![imagen32](images/cap32.png)
+
+3. **Tabs** : A tabbed interface. It allows you to select an interface panel by choosing from a number of tabs sticking out above an element.
+
+![imagen33](images/cap33.png)
+
+![imagen34](images/cap34.png)
+
+## Jekyll
+
+1. Instalación:
+
+![imagen35](images/cap35.png)
+
+2. 
